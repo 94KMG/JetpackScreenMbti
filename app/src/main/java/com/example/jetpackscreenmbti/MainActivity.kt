@@ -49,18 +49,25 @@ fun ScreenButtons(){
 
     val context = LocalContext.current
     Button(onClick = {
-//        val intent = Intent(context, JetpackScreenDescription::class.java)
-//        context.startActivity(intent)
-        val intent = Intent(context, JetpackScreenDescription::class.java)
-        val infp = intent.getStringExtra("INFP")
-        val istp= intent.getStringExtra("ISTP")
-        val entj= intent.getStringExtra("ENTJ")
-        intent.putExtra("INFP", infp)
-        intent.putExtra("ISTP",istp)
-        intent.putExtra("ENTJ",entj)
-
+        val intent1 = Intent(context, JetpackScreenDescription::class.java)
+        intent1.putExtra("mbti1","infp")
+        context.startActivity(intent1)
     }) {
-            Text(text = "")
+        Text(text = "infp")
+    }
+    Button(onClick = {
+        val intent2 = Intent(context, JetpackScreenDescription::class.java)
+        intent2.putExtra("mbti2","istp")
+        context.startActivity(intent2)
+    }) {
+        Text(text = "istp")
+    }
+    Button(onClick = {
+        val intent3 = Intent(context, JetpackScreenDescription::class.java)
+        intent3.putExtra("mbti3","entj")
+        context.startActivity(intent3)
+    }) {
+        Text(text = "entj")
     }
 
 }

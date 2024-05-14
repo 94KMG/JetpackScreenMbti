@@ -18,10 +18,24 @@ class JetpackScreenDescription : ComponentActivity(){
         super.onCreate(savedInstanceState)
         setContent{
            JetpackScreenMbtiTheme {
+               if(intent.hasExtra("mbti1")) {
+                   Image(
+                       painter = painterResource(id = R.drawable.infp),
+                       contentDescription = "infp"
+                   )
 
-               Image(painter = painterResource(id = R.drawable.infp), contentDescription = "infp")
-               Image(painter = painterResource(id = R.drawable.istp), contentDescription = "istp")
-               Image(painter = painterResource(id = R.drawable.entj), contentDescription = "entj")
+               }else if(intent.hasExtra("mbti2")){
+                   Image(
+                       painter = painterResource(id = R.drawable.istp),
+                       contentDescription = "istp"
+                   )
+               }else if(intent.hasExtra("mbti3")){
+                   Image(
+                       painter = painterResource(id = R.drawable.entj),
+                       contentDescription = "entj"
+                   )
+               }
+
            }
         }
     }
