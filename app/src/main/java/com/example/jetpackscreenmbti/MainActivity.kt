@@ -60,7 +60,7 @@ fun ScreenButtons(){
         intent.putExtra("ENTJ",entj)
 
     }) {
-            Text(text = "$screenText")
+            Text(text = "")
     }
 
 }
